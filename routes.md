@@ -1,0 +1,3 @@
+- [Markdown Test Page](#lorem-ipsum.md)
+- [llo worl](#testPost.md)
+- [Third Post With azeroth-js!](#third-post.md)
