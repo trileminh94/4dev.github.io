@@ -12,6 +12,8 @@ Welcome! AzerothJS is an open source blog engine running on static file servers 
 - Made for Github Pages
 - Easy to customization
 
+[Test post](/posts/testPost)
+
 ## Get AzerothJS here
 
 The source code are available on [Github](http://github.com/huytd/azeroth-js)
