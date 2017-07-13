@@ -1,0 +1,90 @@
+[
+  {
+    "index":1,
+    "name":"Mercury",
+    "pages":[
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":0,
+        "surfaceArea":0,
+        "rotationCycle":0,
+        "surfaceTemp":0,
+        "surfaceAtm":0,
+        "atmCompos":{
+          "Phân tử Ôxy":"42%",
+          "Natri":"29%",
+          "Hiđrô":"22%",
+          "Heli":"6%",
+          "Kali":"0.5%",
+          "Agon, Nitơ, Cacbon điôxít, Hơi nước, Xenon, Krypton và Neon":"Rất ít"
+        }
+      }
+    ]
+  },
+  {
+    "index":2,
+    "name":"Venus",
+    "pages":[
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":0,
+        "surfaceArea":0,
+        "rotationCycle":0,
+        "surfaceTemp":0,
+        "surfaceAtm":0,
+        "atmCompos":{
+          "Phân tử Ôxy":"42%",
+          "Natri":"29%",
+          "Hiđrô":"22%",
+          "Heli":"6%",
+          "Kali":"0.5%",
+          "Agon, Nitơ, Cacbon điôxít, Hơi nước, Xenon, Krypton và Neon":"Rất ít"
+        }
+      }
+    ]
+  },
+  {
+    "index":3,
+    "name":"Earth",
+    "pages":[
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":0,
+        "surfaceArea":0,
+        "rotationCycle":0,
+        "surfaceTemp":0,
+        "surfaceAtm":0,
+        "atmCompos":{
+          "Phân tử Ôxy":"42%",
+          "Natri":"29%",
+          "Hiđrô":"22%",
+          "Heli":"6%",
+          "Kali":"0.5%",
+          "Agon, Nitơ, Cacbon điôxít, Hơi nước, Xenon, Krypton và Neon":"Rất ít"
+        }
+      }
+    ]
+  },
+  {
+    "index":4,
+    "name":"Mars",
+    "pages":[
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":0,
+        "surfaceArea":0,
+        "rotationCycle":0,
+        "surfaceTemp":0,
+        "surfaceAtm":0,
+        "atmCompos":{
+          "Phân tử Ôxy":"42%",
+          "Natri":"29%",
+          "Hiđrô":"22%",
+          "Heli":"6%",
+          "Kali":"0.5%",
+          "Agon, Nitơ, Cacbon điôxít, Hơi nước, Xenon, Krypton và Neon":"Rất ít"
+        }
+      }
+    ]
+  }
+]

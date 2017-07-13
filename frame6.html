@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title></title>
+
+    <script src='js/three.js/build/three.js'></script>
+
+    <script src="js/util.js"></script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+<script>
+
+    var renderer	= new THREE.WebGLRenderer();
+
+    renderer.setSize( window.innerWidth - 18, window.innerHeight - 18 );
+
+    renderer.setClearColor(0x000000);
+
+    document.body.appendChild( renderer.domElement );
+
+
+
+    var onRenderFcts= [];
+
+    var scene	= new THREE.Scene();
+
+    var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000 );
+
+    camera.position.z = 40;
+
+
+
+    var light	= new THREE.AmbientLight( 0x888888 )
+
+    scene.add( light )
+
+    var light	= new THREE.DirectionalLight( 'white', 1)
+
+    light.position.set(5,5,5)
+
+    light.target.position.set( 0, 0, 0 )
+
+    scene.add( light )
+
+
+
+    var light	= new THREE.DirectionalLight( 0xcccccc, 1 )
+
+    light.position.set(5,3,5)
+
+    scene.add( light )
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		add an object and make it move					//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+
+
+    var util = new SystemUtil();
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		add star field							//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+
+
+    var uranus = util.makeuranus();
+
+    uranus.position.set(0,0,0);
+
+    uranus.scale.set(0.9,0.9,0.9);
+
+    scene.add(uranus)
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		render the scene						//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    onRenderFcts.push(function(){
+
+        uranus.rotation.y += 0.02;
+
+        renderer.render( scene, camera );
+
+    })
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		loop runner							//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    var lastTimeMsec= null
+
+    requestAnimationFrame(function animate(nowMsec){
+
+        // keep looping
+
+        requestAnimationFrame( animate );
+
+        // measure time
+
+        lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+
+        var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+
+        lastTimeMsec	= nowMsec
+
+        // call each update function
+
+        onRenderFcts.forEach(function(onRenderFct){
+
+            onRenderFct(deltaMsec/1000, nowMsec/1000)
+
+        })
+
+    })
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-animate.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src='js/ui-bootstrap-tpls-0.13.1.min.js'></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/galaxyinfo.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            angular.module('testApp',['GalaxyInfo','ngRoute'])
+                .controller("testPage",['$scope','GalaxyInfoData',function($scope,GalaxyInfoData){
+                    var api=GalaxyInfoData;
+                    $scope.header='Test Galaxy App';
+                    $scope.data=[];
+                    $scope.lang='vn';
+                    $scope.toggleEvent=function(){
+                        if($scope.lang=='vn') $scope.lang='en';
+                        else $scope.lang='vn';
+                        api.init($scope.lang);
+                    };
+
+                    $scope.init=function(){
+                        GalaxyInfoData.onDownloaded(function(d){
+                            $scope.data=d;
+                        });
+                        api.init($scope.lang);
+                    };
+                }]);
+        </script>
+
+        <!--DRAW SCRIPTS-->
+        <script src='js/three.js/build/three.js'></script>
+        <script src="js/require.js/require.js"></script>
+        <script src="js/threex.windowresize.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/Control.js"></script>
+        <script src="js/dat.gui.js"></script>
+        <script src="js/draw.js"></script>
+    </head>
+    <body ng-app="testApp">
+        <style>
+            .dg.ac{
+                z-index: 1000;
+            }
+        </style>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!--<galaxy-page></galaxy-page>-->
+        <ng-view></ng-view>
+    </body>
+</html>

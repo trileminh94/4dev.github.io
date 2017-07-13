@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>three.js css3d - periodic table</title>
+		<style type="text/css">
+			html, body{
+					height: 100%;
+				}
+
+			body{
+				background-color: #000000;
+				margin: 0;
+				font-family: Helvetica, sans-serif;
+				overflow: hidden;
+			}
+
+			.tag{
+				width: 120px;
+				height: 160px;
+				box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+				border: 1px solid rgba(127,255,255,0.25);
+				text-align: center;
+				cursor: default;
+			}
+
+			.tag:hover {
+				box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+				border: 1px solid rgba(127,255,255,0.75);
+			}
+
+			.tag .name{
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				font-size: 10px;
+				color: rgba(127,0,0,1);
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/three.js/build/three.js"></script>
+		<script src="js/tween.js"></script>
+		<script src="js/trackballcontrol.js"></script>
+		<script src="js/css3drenderer.js"></script>
+		<script src='js/three.js/build/three.js'></script>
+
+    <script src="js/util.js"></script>
+
+		<div id="container"></div>
+		<script type="text/javascript">
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+		camera.position.z = 3000;
+
+		var element = document.createElement('div');
+		element.className = 'tag';
+		element.style.backgroundColor = 'rgba(127,127,127,0.4)';
+
+		var name1 = document.createElement('div');
+		name1.className = 'name';
+		name1.textContent = "Trai dat";
+		element.appendChild(name1);
+
+		var object = new THREE.CSS3DObject(element);
+
+		object.position.x = -10;
+		object.position.y = 0;
+		object.position.z = -1000;
+
+		scene.add(object);
+
+		// var Radius = 100;
+
+		// var util = new SystemUtil();
+
+		// var venus = util.makevenus(100);
+  //   venus.name = "venus";
+  //   venus.position.set(Radius/Math.sqrt(2),0,Radius/Math.sqrt(2));
+  //   scene.add(venus);
+
+
+		renderer = new THREE.CSS3DRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.domElement.style.position = 'absolute';
+				document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+
+		var render = function () {
+				requestAnimationFrame( render );
+				renderer.render(scene, camera);
+			};
+
+			render();
+
+
+		</script>
+		
+	</body>
+</html>

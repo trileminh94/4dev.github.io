@@ -1,0 +1,814 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+
+
+/*
+
+ * What follows is the result of much research on cross-browser styling.
+
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+
+ * Kroc Camen, and the H5BP dev community and team.
+
+ */
+
+
+
+/* ==========================================================================
+
+   Base styles: opinionated defaults
+
+   ========================================================================== */
+
+
+
+html,body {
+
+    height: 100%;
+
+}
+
+html {
+
+    color: #222;
+
+    font-size: 1em;
+
+    line-height: 1.4;
+
+}
+
+
+
+/*
+
+ * Remove text-shadow in selection highlight:
+
+ * https://twitter.com/miketaylr/status/12228805301
+
+ *
+
+ * These selection rule sets have to be separate.
+
+ * Customize the background color to match your design.
+
+ */
+
+
+
+::-moz-selection {
+
+    background: #b3d4fc;
+
+    text-shadow: none;
+
+}
+
+
+
+::selection {
+
+    background: #b3d4fc;
+
+    text-shadow: none;
+
+}
+
+
+
+/*
+
+ * A better looking default horizontal rule
+
+ */
+
+
+
+hr {
+
+    display: block;
+
+    height: 1px;
+
+    border: 0;
+
+    border-top: 1px solid #ccc;
+
+    margin: 1em 0;
+
+    padding: 0;
+
+}
+
+
+
+/*
+
+ * Remove the gap between audio, canvas, iframes,
+
+ * images, videos and the bottom of their containers:
+
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+
+ */
+
+
+
+audio,
+
+canvas,
+
+iframe,
+
+img,
+
+svg,
+
+video {
+
+    vertical-align: middle;
+
+}
+
+
+
+/*
+
+ * Remove default fieldset styles.
+
+ */
+
+
+
+fieldset {
+
+    border: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+/*
+
+ * Allow only vertical resizing of textareas.
+
+ */
+
+
+
+textarea {
+
+    resize: vertical;
+
+}
+
+
+
+/* ==========================================================================
+
+   Browser Upgrade Prompt
+
+   ========================================================================== */
+
+
+
+.browserupgrade {
+
+    margin: 0.2em 0;
+
+    background: #ccc;
+
+    color: #000;
+
+    padding: 0.2em 0;
+
+}
+
+
+
+/* ==========================================================================
+
+   Author's custom styles
+
+   ========================================================================== */
+
+
+
+@font-face {
+
+    font-family: 'Myriad Set Pro';
+
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+
+}
+
+* {
+
+    font-family: "Myriad Set Pro","Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+body {
+
+    background: none;
+
+}
+
+canvas, ng-view.ng-scope {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+}
+
+ng-view.ng-scope{
+
+    z-index: 999;
+
+}
+
+
+
+div[class*='earth-page-']{
+
+    height: 100%;
+
+}
+
+.earth-page-0 {
+
+    text-align: center;
+
+}
+
+.galaxyinfo-show {
+
+    position: absolute;
+
+    width: 35%;
+
+    top: 20px;
+
+    bottom: 60px;
+
+    left: 20px;
+
+    background: rgba(99, 99, 99, 0.36);
+
+    border-radius: 20px;
+
+}
+
+.galaxyinfo-master .galaxyinfo-details {
+
+    width: 60%;
+
+    position: absolute;
+
+    background: rgba(255,255,255,0.75);
+
+    color: #333 !important;
+
+    top: 20px;
+
+    right: 20px;
+
+    bottom: 60px;
+
+    border-radius: 20px;
+
+}
+
+.galaxyinfo-master .carousel {
+
+    position: absolute;
+
+    top: 80px;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+}
+
+.galaxyinfo-master .carousel-caption {
+
+    position: relative;
+
+    text-align: left;
+
+    color: #333 !important;
+
+    text-shadow: none;
+
+    font-size: 1.2em;
+
+    left: 100px;
+
+    width: 570px;
+
+}
+
+.galaxyinfo-master .carousel-control {
+
+    background: none !important;
+
+}
+
+
+
+ul.galaxyinfo-nav{
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    margin-left: -432px;
+
+    font-size: 1.2em;
+
+}
+
+ul.galaxyinfo-nav{
+
+    -webkit-transition: opacity 0.25s ease-in-out;
+
+    transition: opacity 0.25s ease-in-out;
+
+    opacity: 0;
+
+}
+
+ul.galaxyinfo-nav:hover{
+
+    opacity: 1;
+
+}
+
+ul.galaxyinfo-nav>li {
+
+    background-color: rgba(130, 130, 130, 0.7);
+
+    padding: 5px 15px;
+
+    margin-right: -4px;
+
+}
+
+ul.galaxyinfo-nav>li:first-child{
+
+    border-top-left-radius: 6px;
+
+    border-bottom-left-radius: 6px;
+
+}
+
+ul.galaxyinfo-nav>li:last-child{
+
+    border-top-right-radius: 6px;
+
+    border-bottom-right-radius: 6px;
+
+}
+
+.galaxyinfo-nav.list-inline>li>a {
+    
+    text-decoration: none;
+
+    color: #fff;
+
+}
+
+.galaxyinfo-nav.list-inline>li:hover {
+
+    background-color: #b3b3b3;
+
+}
+
+/* Justify Button in Master page*/
+.svg-wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 5px;
+  fill: transparent;
+  stroke: #19f6e8;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  width: 100px;
+  height: 30px;
+  top: -28px;
+  position: relative;
+}
+.text a {
+  font-family: 'Roboto Condensed';
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 5px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+/* End of Justify Button */
+
+#close{
+
+    position: absolute;
+
+    right: 30px;
+
+    top: 30px;
+
+    height: 40px;
+
+    width: 40px;
+
+    background-color: #696969;
+
+    line-height: 39px;
+
+    border-radius: 20px;
+
+    color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+
+   Helper classes
+
+   ========================================================================== */
+
+
+
+/*
+
+ * Hide visually and from screen readers:
+
+ */
+
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+
+/*
+
+ * Hide only visually, but have it available for screen readers:
+
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+ */
+
+
+
+.visuallyhidden {
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+
+    height: 1px;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    position: absolute;
+
+    width: 1px;
+
+}
+
+
+
+/*
+
+ * Extends the .visuallyhidden class to allow the element
+
+ * to be focusable when navigated to via the keyboard:
+
+ * https://www.drupal.org/node/897638
+
+ */
+
+
+
+.visuallyhidden.focusable:active,
+
+.visuallyhidden.focusable:focus {
+
+    clip: auto;
+
+    height: auto;
+
+    margin: 0;
+
+    overflow: visible;
+
+    position: static;
+
+    width: auto;
+
+}
+
+
+
+/*
+
+ * Hide visually and from screen readers, but maintain layout
+
+ */
+
+
+
+.invisible {
+
+    visibility: hidden;
+
+}
+
+
+
+/*
+
+ * Clearfix: contain floats
+
+ *
+
+ * For modern browsers
+
+ * 1. The space content is one way to avoid an Opera bug when the
+
+ *    `contenteditable` attribute is included anywhere else in the document.
+
+ *    Otherwise it causes space to appear at the top and bottom of elements
+
+ *    that receive the `clearfix` class.
+
+ * 2. The use of `table` rather than `block` is only necessary if using
+
+ *    `:before` to contain the top-margins of child elements.
+
+ */
+
+
+
+.clearfix:before,
+
+.clearfix:after {
+
+    content: " "; /* 1 */
+
+    display: table; /* 2 */
+
+}
+
+
+
+.clearfix:after {
+
+    clear: both;
+
+}
+
+
+
+/* ==========================================================================
+
+   EXAMPLE Media Queries for Responsive Design.
+
+   These examples override the primary ('mobile first') styles.
+
+   Modify as content requires.
+
+   ========================================================================== */
+
+
+
+@media only screen and (min-width: 35em) {
+
+    /* Style adjustments for viewports that meet the condition */
+
+}
+
+
+
+@media print,
+
+       (-webkit-min-device-pixel-ratio: 1.25),
+
+       (min-resolution: 1.25dppx),
+
+       (min-resolution: 120dpi) {
+
+    /* Style adjustments for high resolution devices */
+
+}
+
+
+
+/* ==========================================================================
+
+   Print styles.
+
+   Inlined to avoid the additional HTTP request:
+
+   http://www.phpied.com/delay-loading-your-print-css/
+
+   ========================================================================== */
+
+
+
+@media print {
+
+    *,
+
+    *:before,
+
+    *:after {
+
+        background: transparent !important;
+
+        color: #000 !important; /* Black prints faster:
+
+                                   http://www.sanbeiji.com/archives/953 */
+
+        box-shadow: none !important;
+
+        text-shadow: none !important;
+
+    }
+
+
+
+    a,
+
+    a:visited {
+
+        text-decoration: underline;
+
+    }
+
+
+
+    a[href]:after {
+
+        content: " (" attr(href) ")";
+
+    }
+
+
+
+    abbr[title]:after {
+
+        content: " (" attr(title) ")";
+
+    }
+
+
+
+    /*
+
+     * Don't show links that are fragment identifiers,
+
+     * or use the `javascript:` pseudo protocol
+
+     */
+
+
+
+    a[href^="#"]:after,
+
+    a[href^="javascript:"]:after {
+
+        content: "";
+
+    }
+
+
+
+    pre,
+
+    blockquote {
+
+        border: 1px solid #999;
+
+        page-break-inside: avoid;
+
+    }
+
+
+
+    /*
+
+     * Printing Tables:
+
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+
+     */
+
+
+
+    thead {
+
+        display: table-header-group;
+
+    }
+
+
+
+    tr,
+
+    img {
+
+        page-break-inside: avoid;
+
+    }
+
+
+
+    img {
+
+        max-width: 100% !important;
+
+    }
+
+
+
+    p,
+
+    h2,
+
+    h3 {
+
+        orphans: 3;
+
+        widows: 3;
+
+    }
+
+
+
+    h2,
+
+    h3 {
+
+        page-break-after: avoid;
+
+    }
+
+}
+

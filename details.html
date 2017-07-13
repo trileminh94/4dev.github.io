@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Solar System - Team 9</title>
+
+    <script src='js/three.js/build/three.js'></script>
+
+    <script src="js/util.js"></script>
+    <script type="text/javascript" src="js/Control_2.js"></script>
+    <script src="js/dat.gui.js"></script>
+    <script src="js/css3drenderer.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="js/tween.js">
+    <style type="text/css">
+        body{
+            margin: 0px;
+            overflow: hidden;
+        }
+        #element {
+            background-image: url('/images/background.png');
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            color: white;
+        }
+        #date {
+            font-size: 40px;
+            font-family: "Lucida Console";
+        }
+        #elements ul {
+            list-style: none;
+        }
+        #elements ul li {
+            margin-top: 25px;
+        }
+      
+    </style>
+
+</head>
+
+<body>
+<div id="element">
+    <div id="name" style="position:absolute; left:150px; top:50px;">Trái Ðất</div>
+    <div id="date" style="position:absolute; right:50px; top:50px;">10</div>
+    <div id="elements" style="position:absolute; left:60px; top:100px;">
+        <ul>
+            <li id="element1">He</li>
+            <li id="element2">H</li>
+            <li id="element3">Ni</li>
+            <li id="element4">Ne</li>
+            <li id="element5">Li</li>
+            <li id="element6">Cu</li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var today = new Date();
+        var day = today.getDate();
+        $('#date').text(day);
+    });
+</script>
+<script>
+    var data = null;
+    $.getJSON('galaxy-vn.json', function(dataClone, textStatus) {
+        data = dataClone;
+    });
+
+    var coordinateArray = [{}]
+
+    var Radius = 3000;
+    var planetRadius = 100;
+    var planetBigRadius = 700;
+
+
+
+    var renderer	= new THREE.WebGLRenderer();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    renderer.setClearColor(0x000000);
+    renderer.domElement.style.position = 'absolute';
+
+    document.body.appendChild( renderer.domElement );
+
+
+
+    var onRenderFcts= [];
+
+    var scene	= new THREE.Scene();
+
+    var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 20000 );
+
+    //var camera = new THREE.OrthographicCamera( 60, -60, -50, 50, 0.01, 1000 );
+
+
+    camera.position.z = 7000;
+    camera.position.y = 0;//1500;
+    camera.position.x = 0;//2500;
+    // camera.position.x = 0;
+    // camera.position.y = 0;
+    // camera.position.z = -100;
+    //camera.lookAt(new THREE.Vector3( 0, 0, Radius ));
+    camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
+
+
+
+    var light	= new THREE.AmbientLight( 0x888888 )
+
+    scene.add( light )
+
+    var light	= new THREE.DirectionalLight( 'white', 1)
+
+    light.position.set(5,5,5)
+
+    light.target.position.set( 0, 0, 0 )
+
+    scene.add( light )
+
+
+
+    var light	= new THREE.DirectionalLight( 0xcccccc, 1 )
+
+    light.position.set(5,3,5)
+
+    scene.add( light )
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		add an object and make it move					//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+
+
+    var util = new SystemUtil();
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		add star field							//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    
+
+    var mercury = util.makemercury(this.planetRadius);
+    mercury.name = "mercury";
+    mercury.position.set(Radius,0,0);
+    scene.add(mercury);
+
+    var venus = util.makevenus(this.planetRadius);
+    venus.name = "venus";
+    venus.position.set(Radius/Math.sqrt(2),0,Radius/Math.sqrt(2));
+    scene.add(venus);
+
+
+    var earth = util.makeearth(this.planetRadius);
+    earth.name ="earth";
+    earth.position.set(0,0,Radius);
+    scene.add(earth);
+
+    var mars = util.makemars(this.planetRadius);
+    mars.name = "mars";
+    mars.position.set(-Radius/Math.sqrt(2),0,Radius/Math.sqrt(2));
+    scene.add(mars);
+
+    var jupiter = util.makejupiter(this.planetRadius);
+    jupiter.name = "jupiter";
+    jupiter.position.set(-Radius,0,0);
+    scene.add(jupiter);
+
+    var saturn = util.makesaturn(this.planetRadius);
+    saturn.name = "saturn";
+    saturn.position.set(-Radius/Math.sqrt(2),0,-Radius/Math.sqrt(2));
+    scene.add(saturn);
+
+    var uranus = util.makeuranus(this.planetRadius);
+    uranus.name = "uranus";
+    uranus.position.set(0,0,-Radius);
+    scene.add(uranus);
+
+    var neptune = util.makeneptune(this.planetRadius);
+    neptune.name = "neptune";
+    neptune.position.set(Radius/Math.sqrt(2),0,-Radius/Math.sqrt(2));
+    scene.add(neptune);
+
+
+    var bigvenus = util.makevenus(this.planetBigRadius);
+    bigvenus.name = "bigvenus";
+    bigvenus.position.set(0,0,Radius);
+    scene.add(bigvenus);
+
+    var bigmercury = util.makemercury(this.planetBigRadius);
+    bigmercury.name = "bigmercury";
+    bigmercury.position.set(0,0,Radius);
+    scene.add(bigmercury);
+
+    var bigearth = util.makeearth(this.planetBigRadius);
+    bigearth.name = "bigearth";
+    bigearth.position.set(0,0,Radius);
+    scene.add(bigearth);
+
+    var bigmars = util.makemars(this.planetBigRadius);
+    bigmars.name = "bigmars";
+    bigmars.position.set(0,0,Radius);
+    scene.add(bigmars);
+
+    var bigjupiter = util.makejupiter(this.planetBigRadius);
+    bigjupiter.name = "bigjupiter";
+    bigjupiter.position.set(0,0,Radius);
+    scene.add(bigjupiter);
+
+    var bigsaturn = util.makesaturn(this.planetBigRadius);
+    bigsaturn.name = "bigsaturn";
+    bigsaturn.position.set(0,0,Radius);
+    scene.add(bigsaturn);
+
+    var biguranus = util.makeuranus(this.planetBigRadius);
+    biguranus.name = "biguranus";
+    biguranus.position.set(0,0,Radius);
+    scene.add(biguranus);
+
+    var bigneptune = util.makeneptune(this.planetBigRadius);
+    bigneptune.name = "bigneptune";
+    bigneptune.position.set(0,0,Radius);
+    scene.add(bigneptune);
+
+    var outer = util.makeOuter(10000);
+    scene.add(outer);
+
+
+
+    //ve bang thong tin
+    //var table = document.make
+
+
+    var myStore = new function(){
+        this.visibleIndex = 0;
+    };
+
+    control2(scene,camera,myStore);
+
+    
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		render the scene						//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    onRenderFcts.push(function(){
+
+        var visibleIndex = 0;
+
+        //cap nhat visible index
+        visibleIndex = myStore.visibleIndex;
+
+        // TODO: dung jquery de thay noi dung
+        switch(visibleIndex) {
+            case util.earthIndex:
+                $('#name').text("The Earth");
+                $('#desc').text("Trai dat");
+                break;
+            case util.venusIndex:
+                $('#name').text("The Venus");
+                $('#desc').text("Sao kim");
+                break;
+        }
+        
+
+        //rotate tung hanh tinh
+        venus.rotation.y += 0.02;
+        mercury.rotation.y += 0.02;
+        earth.rotation.y += 0.02;
+        mars.rotation.y += 0.02;
+        jupiter.rotation.y += 0.02;
+        saturn.rotation.y += 0.02;
+        uranus.rotation.y += 0.02;
+        neptune.rotation.y += 0.02;
+
+
+        //rotate big hanh tinh
+        bigvenus.rotation.y += 0.02;
+        bigmercury.rotation.y += 0.02;
+        bigearth.rotation.y += 0.02;
+        bigmars.rotation.y += 0.02;
+        bigjupiter.rotation.y += 0.02;
+        bigsaturn.rotation.y += 0.02;
+        biguranus.rotation.y += 0.02;
+        bigneptune.rotation.y += 0.02;
+
+        //visibel all small
+        mercury.visible = true;
+        venus.visible = true;
+        earth.visible = true;
+        var moonpivot = earth.getChildByName("moonpivot");
+        var moon = moonpivot.getObjectByName("moon");
+        moon.visible = true;
+        mars.visible = true;
+        jupiter.visible = true;
+        saturn.visible = true;
+        var saturnring = saturn.getChildByName("saturnring");
+        saturnring.visible = true;
+        uranus.visible = true;
+        var uranusring = uranus.getChildByName("uranusring");
+        uranusring.visible = true;
+        neptune.visible = true;
+
+        //reset all visible
+        bigmercury.visible = false;
+        bigvenus.visible = false;
+        bigearth.visible = false;
+        var moonpivot = bigearth.getChildByName("moonpivot");
+        var bigmoon = moonpivot.getObjectByName("moon");
+        bigmoon.visible = false;
+        bigmars.visible = false;
+        bigjupiter.visible = false;
+        bigsaturn.visible = false;
+        var saturnring = bigsaturn.getChildByName("saturnring");
+        saturnring.visible = false;
+        biguranus.visible = false;
+        var uranusring = biguranus.getChildByName("uranusring");
+        uranusring.visible = false;
+        bigneptune.visible = false;
+
+        //set visible
+        switch(visibleIndex) {
+            case util.mercuryIndex:
+                bigmercury.visible = true;
+                mercury.visible = false;
+                break;
+            case util.venusIndex:
+                bigvenus.visible = true;
+                venus.visible = false;
+                break;
+            case util.earthIndex:
+                bigearth.visible = true;
+                earth.visible = false;
+                break;
+            case util.marsIndex:
+                bigmars.visible = true;
+                mars.visible = false;
+                break;
+            case util.jupiterIndex:
+                bigjupiter.visible = true;
+                jupiter.visible = false;
+                break;
+            case util.saturnIndex:
+                bigsaturn.visible = true;
+                var saturnring = bigsaturn.getChildByName("saturnring");
+                saturnring.visible = true;
+                saturn.visible = false;
+                var saturnring = saturn.getChildByName("saturnring");
+                saturnring.visible = false;
+
+                break;
+            case util.uranusIndex:
+                biguranus.visible = true;
+                var uranusring = biguranus.getChildByName("uranusring");
+                uranusring.visible = true;
+                uranus.visible = false;
+                var uranusring = uranus.getChildByName("uranusring");
+                uranusring.visible = false;
+                break;
+            case util.neptuneIndex:
+                bigneptune.visible = true;
+                break;
+        }
+        
+        
+
+        data.forEach(function(elem) {
+            if (elem.index == (visibleIndex+3)%8) {
+                var name = elem.name;
+                $('#name').text(name);
+
+                var index = 1;
+                for (var element in elem.pages[1].atmCompos) {
+                    $('#element' + index).text(element);
+                    index++;
+                }
+            }
+        });
+        renderer.render( scene, camera );
+        
+
+    })
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //		loop runner							//
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    var lastTimeMsec= null
+
+    requestAnimationFrame(function animate(nowMsec){
+
+        // keep looping
+
+        requestAnimationFrame( animate );
+
+        // measure time
+
+        lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+
+        var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+
+        lastTimeMsec	= nowMsec
+
+        // call each update function
+
+        onRenderFcts.forEach(function(onRenderFct){
+
+            onRenderFct(deltaMsec/1000, nowMsec/1000)
+
+        })
+
+    })
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    //      on selected planet                         //
+
+    //////////////////////////////////////////////////////////////////////////////////
+    
+       
+    
+    
+</script>
+
+</html>

@@ -1,0 +1,203 @@
+[
+  {
+    "index":1,
+    "name":"Sao Thuỷ",
+    "pages":[
+      {
+        "desc":"Hành tinh này được đặt tên tương ứng với từ Hermes trong tiếng Hy Lạp, tên gọi của vị thần truyền tin và trộm cắp có đôi giầy có cánh có thể bay đi khắp mọi nơi nhanh hơn cả gió cuốn. Quả đúng như vậy, Sao Thuỷ là hành tinh gần Mặt Trời nhất và có chu kì năm (chu kì quay quanh Mặt Trời) nhỏ nhất trong số các hành tinh, khi quan sát từ Trái Đất, bạn sẽ thấy rõ nó hoàn thành một vòng quay quanh Mặt Trời nhanh như thế nào."
+      },
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":6.083e10,
+        "weight":3.3022e23,
+        "surfaceArea":7.48e7,
+        "rotationCycle":58.646,
+        "surfaceTemp":"đêm khoảng 100K còn ngày là khoảng 700K (độ C = K - 273)",
+        "surfaceAtm":"rat nho",
+        "atmCompos":{
+          "Phân tử Ôxy":"42%",
+          "Natri":"29%",
+          "Hiđrô":"22%",
+          "Heli":"6%",
+          "Kali":"0.5%",
+          "Agon, Nitơ, Cacbon điôxít, Hơi nước, Xenon, Krypton và Neon":"Rất ít"
+        }
+      }
+    ]
+  },
+  {
+    "index":2,
+    "name":"Sao Kim",
+    "pages":[
+      {
+        "desc":"Mỗi năm sẽ có vài tháng bạn thấy Sao Mai mọc lên buổi sớm ở chân trời Đông và vài tháng khác lại thấy Sao Hôm lúc Mặt rời lặn ở chân trời Tây. Chúng rất đẹp và rất sáng, cả 2, thật ra đều là một hành tinh duy nhất – Sao Kim. Nó là thiên thể sáng nhất bầu trời đêm của chúng ta (không tính Mặt Trăng), vẻ đẹp của nó làm người thời xưa đặt tên nó là Venus, theo tiếng Hy Lạp là Aphrodite – nữ thần tình yêu và sắc đẹp."
+      },
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":9.28e11,
+        "surfaceArea":4.6e8,
+        "rotationCycle":-243.0185,
+        "surfaceTemp":"726k",
+        "surfaceAtm":"9,2MPA",
+        "atmCompos":{
+          "CO2":"96.5%",
+          "N2":"3.5%",
+          "SO2":"0.015%",
+          "Ar":"0.007%",
+          "hơi nước":"0.002%"
+        }
+      }
+    ]
+  },
+  {
+    "index":3,
+    "name":"Trái Đất",
+    "pages":[
+      {
+        "desc":"Trái Đất (Earth) là hành tinh thứ 3 của Hệ Mặt Trời tính từ trong ra. Chúng ta biết rằng ây chính là nơi chúng ta đã sinh ra và tồn tại, cũng là nơi duy nhất tồn tại sự sống trong Hệ Mặt Trời (theo những hiểu biết của chúng ta cho đến ngày nay)"
+      },
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":1.0832e12,
+        "surfaceArea":510072000,
+        "rotationCycle":0.99726968,
+        "surfaceTemp":"287K",
+        "surfaceAtm":"101.3 kPa",
+        "atmCompos":{
+          "Nitơ (N2)":"78.08%",
+          "Ôxy (O2)":"20.95%",
+          "Agon":"0.93%",
+          "Điôxít cacbon":"0.038%",
+          "Hơi nước":"Khoảng 1% (dao động theo khí hậu)"
+        }
+      },{}
+    ]
+  },
+  {
+    "index":4,
+    "name":"Sao Hoả",
+    "pages":[
+      {
+         "desc":"Hành tinh có màu đỏ như lửa, trong khi người phương Đông gọi nó là “Hoả” thì ở phương Tây, nó được gắn cho cái tên Mars – tên của thần chiến tranh Ares trong thần thoại Hy Lạp - vị thần hiếu chiến mà mỗi nơi thần đi qua thì luôn để lại một màu đỏ của lửa và máu."
+      },
+      {
+        "planetType":"Hành tinh đất đá",
+        "volume":0,
+        "surfaceArea":0,
+        "rotationCycle":0,
+        "surfaceTemp":0,
+        "surfaceAtm":0,
+        "atmCompos":{
+          "Phân tử Ôxy":"42%",
+          "Natri":"29%",
+          "Hiđrô":"22%",
+          "Heli":"6%",
+          "Kali":"0.5%",
+          "Agon, Nitơ, Cacbon điôxít, Hơi nước, Xenon, Krypton và Neon":"Rất ít"
+        }
+      }
+    ]
+  },
+  {
+    "index":5,
+    "name":"Sao Mộc",
+    "pages":[
+      {
+         "desc":"Là hành tinh lớn nhất hệ Mặt Trời, Sao Mộc hoàn toàn xứng đáng với cái tên Jupiter, mà theo tiếng Hy Lạp là Zeus – chúa tể của các vị thần. Sao Mộc cũng là hành tinh có nhiều vệ tinh nhất cũng như nhiều hiện tượng được quan tâm trong số 8 hành tinh của Hệ Mặt Trời."
+      },
+      {
+        "planetType":"Hành tinh khí",
+        "volume":1.4313e15,
+        "weight":1.8986e27,
+        "surfaceArea":6.149e10,
+        "rotationCycle":4332.59,
+        "surfaceTemp":"120K",
+        "surfaceAtm":"200kPa",
+        "atmCompos":{
+          "Hiđrô":"89.8%",
+          "Heli":"10.2%",
+          "Mêtan":"0.3%",
+          "Amoniac":"0.026%",
+          "Hiđrô deuteri": "0.003%",
+          "Êtan":"0.0006%",
+          "Nước":"0.0004%"
+        }
+      }
+    ]
+  },
+  {
+    "index":6,
+    "name":"Sao Thổ",
+    "pages":[
+      {
+         "desc":"Nhiều người coi đây là hành tinh đẹp nhất trong số 7 hành tinh của Hệ Mặt Trời (không tính Trái Đất) do cái vành đai (Saturn’s ring) đặc biệt của nó. Sao Thổ được đặt tên là Saturn, theo tiếng Hy Lạp là Cronus – cha của thần Zeus, người bị thần Zeus lật đổ khỏi vị trí cai quản các vị thần."
+      },
+      {
+        "planetType":"Hành tinh khí",
+        "volume":8.2713e14,
+        "surfaceArea":4.27e10,
+        "rotationCycle":10759.22,
+        "surfaceTemp":"88K",
+        "surfaceAtm":"2 bar",
+        "atmCompos":{
+          "Hiđrô":"96%",
+          "Heli":"3%",
+          "Mêtan":"0.4%",
+          "Amoniac":"0.01%",
+          "Hiđrô deuteri": "0.01%",
+          "Êtan":"0.0007%"
+        }
+      }
+    ]
+  },
+  {
+    "index":7,
+    "name":"Sao Thiên Vương",
+    "pages":[
+      {
+         "desc":"Hành tinh này được phát hiện ra vào ngày 13/3/1781 bởi nhà thiên văn William Herschel. Nó được đặt tên theo tên của Ouranos - thần bầu trời, cha của Cronus, tức là ông nội của thần Zeus, người từng bị Cronus giết chết để cướp ngôi."
+      },
+      {
+        "planetType":"Hành tinh khí",
+        "volume":6.833e13,
+        "surfaceArea":8.1156e9,
+        "rotationCycle":30799.095,
+        "surfaceTemp":"76K",
+        "surfaceAtm":"1.3 bar",
+        "atmCompos":{
+          "Hiđrô":"83%",
+          "Heli":"15%",
+          "Mêtan":"2.3%",
+          "Amoniac":"0.01%",
+          "Hiđrô deuteri": "0.009%",
+          "Êtan":"0%"
+        }
+      }
+    ]
+  },
+  {
+    "index":8,
+    "name":"Sao Hải Vương",
+    "pages":[
+      {
+         "desc":"Được phát hiện ngày 23 tháng 9 năm 1846, hành tinh này được đặt tên là Neptune do nó có màu xanh như nước biển. Neptune theo tiếng Hy Lạp là Poseidon – anh trai của thần Zeus, vị thần cai quản tất cả các đại dương trên thế giới."
+      },
+      {
+        "planetType":"Hành tinh khí",
+        "volume":8.2713e14,
+        "surfaceArea":4.27e10,
+        "rotationCycle":10759.22,
+        "surfaceTemp":"88K",
+        "surfaceAtm":"2 bar",
+        "atmCompos":{
+          "Hiđrô":"96%",
+          "Heli":"3%",
+          "Mêtan":"0.4%",
+          "Amoniac":"0.01%",
+          "Hiđrô deuteri": "0.01%",
+          "Êtan":"0.0007%"
+        }
+      }
+    ]
+  }
+]
