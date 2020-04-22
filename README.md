@@ -1,1 +1,1 @@
-# 4Dev
+# Solar System emulator
